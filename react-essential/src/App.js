@@ -9,10 +9,15 @@ function MAIN(props) {
   )
 }
 
-function CONTENT() {
+function CONTENT(props) {
   return (
     < section >
-      <h2>How react works</h2>
+      <h2>How Web  works</h2>
+      <ul style={{ textAlign: 'left' }}>
+        {
+          props.learn.map((item) => <li key={item.id}>{item.name}</li>)
+        }
+      </ul>
     </section >
   )
 }
@@ -25,11 +30,20 @@ function FOOTER(props) {
     </footer>
   );
 }
+
+const toLearn = [
+  'JS',
+  'React',
+  'CSS'
+];
+
+const techStack = toLearn.map((item, i) => ({ id: i + item, name: item }));
+
 function App() {
   return (
     <div className="App">
       <MAIN name="Prassanna S" />
-      <CONTENT />
+      <CONTENT learn={techStack} />
       <FOOTER year={new Date().getFullYear()} />
 
 
