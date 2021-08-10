@@ -1,5 +1,6 @@
 
 import './App.css';
+import ShowImage from './ShowImage';
 
 function MAIN(props) {
   return (
@@ -25,7 +26,7 @@ function CONTENT(props) {
 function FOOTER(props) {
   return (
     <footer>
-      <h3>passion to learn new features and techologies </h3>
+      <h3>passion to learn new features and technologies </h3>
       <p> Copyright {props.year}</p>
     </footer>
   );
@@ -44,6 +45,7 @@ function App() {
     <div className="App">
       <MAIN name="Prassanna S" />
       <CONTENT learn={techStack} />
+       <ShowImage src="https://github.com/sprassanna.png" height="200" />
       <FOOTER year={new Date().getFullYear()} />
 
 
