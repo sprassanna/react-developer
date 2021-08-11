@@ -1,6 +1,8 @@
 
 import './App.css';
 import ShowImage from './ShowImage';
+import Secret from './components/secret';
+import Header from './components/header';
 
 function MAIN(props) {
   return (
@@ -41,6 +43,10 @@ const toLearn = [
 const techStack = toLearn.map((item, i) => ({ id: i + item, name: item }));
 
 function App() {
+   if (props.authz) {
+    return <Secret />
+  }
+  else {
   return (
     <div className="App">
       <MAIN name="Prassanna S" />
@@ -51,6 +57,7 @@ function App() {
 
     </div>
   );
+}
 }
 
 export default App;
